@@ -1,6 +1,7 @@
 package world.hello.order.utils.impl;
 
 import world.hello.order.domain.dto.Order;
+import world.hello.order.domain.dto.OrderData;
 import world.hello.order.domain.model.OrderTable;
 import world.hello.order.utils.OrderMapper;
 
@@ -12,6 +13,16 @@ public class OrderMapperImpl implements OrderMapper {
         .skuCode(entity.getSkuCode())
         .price(entity.getPrice())
         .quantity(entity.getQuantity())
+        .build();
+  }
+
+  @Override
+  public Order toDto(OrderData data) {
+    return Order.builder()
+        .orderNumber(null)
+        .skuCode(data.skuCode())
+        .price(data.price())
+        .quantity(data.quantity())
         .build();
   }
 

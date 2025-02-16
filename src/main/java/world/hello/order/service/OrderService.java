@@ -1,3 +1,8 @@
 package world.hello.order.service;
 
-public interface OrderService {}
+import world.hello.order.domain.dto.Order;
+import world.hello.order.domain.dto.OrderData;
+
+public interface OrderService {
+    Order placeOrder(OrderData data);
+}
