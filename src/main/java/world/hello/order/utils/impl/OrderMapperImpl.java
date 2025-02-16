@@ -1,11 +1,13 @@
 package world.hello.order.utils.impl;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Component;
 import world.hello.order.domain.dto.Order;
 import world.hello.order.domain.dto.OrderData;
 import world.hello.order.domain.model.OrderTable;
 import world.hello.order.utils.OrderMapper;
 
+@Component
 @Slf4j
 public class OrderMapperImpl implements OrderMapper {
 

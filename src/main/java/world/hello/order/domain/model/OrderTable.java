@@ -1,18 +1,16 @@
 package world.hello.order.domain.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.math.BigDecimal;
 
-@Entity(name = "t_orders")
+@Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@Table(name = "t_orders")
 public class OrderTable {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
