@@ -8,6 +8,7 @@ services:
       MYSQL_ROOT_PASSWORD: changeinprod
     volumes:
       - mysql_order_data:/vat/lib/mysql
+      - ./docker/mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
 
 volumes:
   mysql_order_data:
