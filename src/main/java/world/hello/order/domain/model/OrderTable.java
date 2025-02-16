@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name = "t_orders")
+@Table(name = "t_order")
 public class OrderTable {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)

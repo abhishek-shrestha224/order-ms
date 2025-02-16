@@ -7,7 +7,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: changeinprod
     volumes:
-      - mysql_order_data:/vat/lib/mysql
+      - mysql_order_data:/var/lib/mysql
       - ./docker/mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
 
 volumes:
