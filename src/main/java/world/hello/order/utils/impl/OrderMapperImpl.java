@@ -43,10 +43,10 @@ public class OrderMapperImpl implements OrderMapper {
     OrderTable orderTable =
         OrderTable.builder()
             .id(null)
-            .orderNumber(dto.orderNumber())
-            .skuCode(dto.skuCode())
-            .price(dto.price())
-            .quantity(dto.quantity())
+            .orderNumber(dto.getOrderNumber())
+            .skuCode(dto.getSkuCode())
+            .price(dto.getPrice())
+            .quantity(dto.getQuantity())
             .build();
     log.info("Mapped OrderTable entity: {}", orderTable);
     return orderTable;

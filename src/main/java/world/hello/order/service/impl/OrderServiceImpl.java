@@ -8,6 +8,8 @@ import world.hello.order.repository.OrderRepository;
 import world.hello.order.service.OrderService;
 import world.hello.order.utils.OrderMapper;
 
+import java.util.UUID;
+
 @Service
 @RequiredArgsConstructor
 public class OrderServiceImpl implements OrderService {
@@ -16,7 +18,7 @@ public class OrderServiceImpl implements OrderService {
 
   @Override
   public Order placeOrder(OrderData data) {
-    final Order newOrder = Order.builder().build();
+    final Order newOrder = orderMapper.toDto(data).orderNumber(UUID.randomUUID().toString());
     return null;
   }
 }
