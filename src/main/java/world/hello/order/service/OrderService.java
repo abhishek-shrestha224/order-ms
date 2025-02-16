@@ -5,4 +5,6 @@ import world.hello.order.domain.dto.OrderData;
 
 public interface OrderService {
     Order placeOrder(OrderData data);
+
+    Order fetchOrderByOrderNumber(String orderNumber);
 }
