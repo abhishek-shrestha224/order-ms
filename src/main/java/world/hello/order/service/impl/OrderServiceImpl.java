@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 import world.hello.order.domain.dto.Order;
 import world.hello.order.domain.dto.OrderData;
-import world.hello.order.domain.model.OrderTable;
+import world.hello.order.domain.entity.OrderEntity;
 import world.hello.order.repository.OrderRepository;
 import world.hello.order.service.OrderService;
 import world.hello.order.utils.OrderMapper;
@@ -29,7 +29,7 @@ public class OrderServiceImpl implements OrderService {
       newOrder.setOrderNumber(UUID.randomUUID().toString());
       log.info("New Order: {}", newOrder);
 
-      final OrderTable placedOrder = orderRepository.save(orderMapper.toEntity(newOrder));
+      final OrderEntity placedOrder = orderRepository.save(orderMapper.toEntity(newOrder));
       log.info("Placed Order: {}", placedOrder);
       return orderMapper.toDto(placedOrder);
 
@@ -44,7 +44,7 @@ public class OrderServiceImpl implements OrderService {
   public Order fetchOrderByOrderNumber(String orderNumber) {
     try {
       log.info("Finding order by orderNumber: {}", orderNumber);
-      OrderTable order =
+      OrderEntity order =
           orderRepository
               .findByOrderNumber(orderNumber)
               .orElseThrow(

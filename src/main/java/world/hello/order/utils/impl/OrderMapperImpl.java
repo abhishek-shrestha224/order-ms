@@ -4,7 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import world.hello.order.domain.dto.Order;
 import world.hello.order.domain.dto.OrderData;
-import world.hello.order.domain.model.OrderTable;
+import world.hello.order.domain.entity.OrderEntity;
 import world.hello.order.utils.OrderMapper;
 
 @Component
@@ -12,7 +12,7 @@ import world.hello.order.utils.OrderMapper;
 public class OrderMapperImpl implements OrderMapper {
 
   @Override
-  public Order toDto(OrderTable entity) {
+  public Order toDto(OrderEntity entity) {
     log.info("Mapping OrderTable entity to Order DTO: {}", entity);
     Order order =
         Order.builder()
@@ -40,10 +40,10 @@ public class OrderMapperImpl implements OrderMapper {
   }
 
   @Override
-  public OrderTable toEntity(Order dto) {
+  public OrderEntity toEntity(Order dto) {
     log.info("Mapping Order DTO to OrderTable entity: {}", dto);
-    OrderTable orderTable =
-        OrderTable.builder()
+    OrderEntity orderTable =
+        OrderEntity.builder()
             .id(null)
             .orderNumber(dto.getOrderNumber())
             .skuCode(dto.getSkuCode())
