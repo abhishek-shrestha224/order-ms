@@ -4,11 +4,13 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import world.hello.order.repository.OrderRepository;
 
 @SpringBootApplication
 @EnableFeignClients
+@EnableDiscoveryClient
 public class OrderMsApplication {
 
   public static void main(String[] args) {
